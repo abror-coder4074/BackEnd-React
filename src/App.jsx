@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch("https://json-api.uz/api/project/malumotla/product/");
+        const response = await fetch("https://dummyjson.com/products");
 
         if (!response.ok) {
           throw new Error("Ma'lumotni yuklab bo‘lmadi");
@@ -17,7 +17,7 @@ function App() {
         console.log(data.data);
         
 
-        setUsers(data.data);
+        setUsers(data.products);
       } catch (err) {
         console.error("Xatolik:", err);
         setError(err.message);
